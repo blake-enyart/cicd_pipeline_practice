@@ -22,3 +22,6 @@ venv.bak/
 cdk.out/
 node_modules
 node_modules
+
+# IDE
+.vscode/
