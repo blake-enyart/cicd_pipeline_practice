@@ -2,10 +2,12 @@
 
 from aws_cdk import core
 
-from cicd_pipeline_practice.cicd_pipeline_practice_stack import CicdPipelinePracticeStack
+from cicd_pipeline_practice.cdk_pipelines_demo_pipeline_stack import (
+    CdkPipelinesDemoStack,
+)
 
 
 app = core.App()
-CicdPipelinePracticeStack(app, "cicd-pipeline-practice", env={'region': 'us-west-2'})
+CdkPipelinesDemoStack(app, "cicd-pipeline-practice", env={"region": "us-west-2"})
 
 app.synth()
