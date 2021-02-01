@@ -1096,14 +1096,14 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "constructs"
-version = "3.2.117"
+version = "3.3.1"
 description = "A programming model for composable configuration"
 category = "main"
 optional = false
 python-versions = ">=3.6"
 
 [package.dependencies]
-jsii = ">=1.17.1,<2.0.0"
+jsii = ">=1.18.0,<2.0.0"
 publication = ">=0.0.3"
 
 [[package]]
@@ -1493,8 +1493,8 @@ colorama = [
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
 ]
 constructs = [
-    {file = "constructs-3.2.117-py3-none-any.whl", hash = "sha256:47c5e709822006e7984be77d2100ebd694798c67d19d86d2d5f1bf51fb98f4dd"},
-    {file = "constructs-3.2.117.tar.gz", hash = "sha256:9423292f65b3f36ee1f358acf261f8bb055e570b48fe0a435e2cb74e983f187e"},
+    {file = "constructs-3.3.1-py3-none-any.whl", hash = "sha256:e73f8522900f1e36f4a0f339064bb9f3e69fdf161b037eb8db5e058c414df5bc"},
+    {file = "constructs-3.3.1.tar.gz", hash = "sha256:b5d7730c92e3d63a228798326ec5c155312e95964a195ff70885f43dbe6c5df9"},
 ]
 isort = [
     {file = "isort-5.7.0-py3-none-any.whl", hash = "sha256:fff4f0c04e1825522ce6949973e83110a6e907750cd92d128b0d14aaaadbffdc"},

@@ -10,6 +10,9 @@ from cdk_pipelines_stage import MyApplication
 import os
 
 
+# class
+
+
 class CdkPipelinesDemoStack(core.Stack):
     def __init__(self, scope: core.Construct, construct_id: str, **kwargs):
         super().__init__(scope, construct_id, **kwargs)
@@ -47,44 +50,44 @@ class CdkPipelinesDemoStack(core.Stack):
             ),
         )
 
-        dev_stage = cicd_pipeline.add_application_stage(
-            app_stage=MyApplication(
-                self,
-                "PreProd",
-                env=core.Environment(
-                    account=os.getenv("AWS_ACCOUNT_NUMBER"),
-                    region="us-east-2",
-                ),
-            ),
-        )
+        # dev_stage = cicd_pipeline.add_application_stage(
+        #     app_stage=MyApplication(
+        #         self,
+        #         "PreProd",
+        #         env=core.Environment(
+        #             account=os.getenv("AWS_ACCOUNT_NUMBER"),
+        #             region="us-east-1",
+        #         ),
+        #     ),
+        # )
 
-        dev_stage.add_actions(
-            pipelines.ShellScriptAction(
-                action_name="IntegrationTestService",
-                commands=[
-                    "pip install -r requirements.txt",
-                    "poetry config virtualenvs.create false",
-                    "poetry install --no-dev",
-                    "pytest tests",
-                ],
-                additional_artifacts=[
-                    source_artifact,
-                ],
-                run_order=3,
-            ),
-        )
+        # dev_stage.add_actions(
+        #     pipelines.ShellScriptAction(
+        #         action_name="IntegrationTestService",
+        #         commands=[
+        #             "pip install -r requirements.txt",
+        #             "poetry config virtualenvs.create false",
+        #             "poetry install --no-dev",
+        #             "pytest tests",
+        #         ],
+        #         additional_artifacts=[
+        #             source_artifact,
+        #         ],
+        #         run_order=3,
+        #     ),
+        # )
 
-        dev_stage.add_manual_approval_action(action_name="ManualApproval", run_order=4)
+        # dev_stage.add_manual_approval_action(action_name="ManualApproval", run_order=4)
 
-        prod_stage = cicd_pipeline.add_application_stage(
-            app_stage=MyApplication(
-                self,
-                "Prod",
-                env=core.Environment(
-                    account=os.getenv("AWS_ACCOUNT_NUMBER"),
-                    region="us-east-1",
-                ),
-            )
-        )
+        # prod_stage = cicd_pipeline.add_application_stage(
+        #     app_stage=MyApplication(
+        #         self,
+        #         "Prod",
+        #         env=core.Environment(
+        #             account=os.getenv("AWS_ACCOUNT_NUMBER"),
+        #             region="us-east-1",
+        #         ),
+        #     )
+        # )
 
-        prod_stage.deploys_stack(artifact_id=cloud_assembly_artifact.url)
+        # prod_stage.deploys_stack(artifact_id=cloud_assembly_artifact.url)
